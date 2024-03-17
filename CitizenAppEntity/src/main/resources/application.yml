@@ -1,0 +1,12 @@
+server:
+  port: 9091
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/HIS
+    username: root
+    password: 1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create

@@ -1,0 +1,24 @@
+server:
+  port: 9093
+
+spring:
+  application:
+    name: API-Gateway
+
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowercaseServiceId: true
+
+      routes:
+        - id: welcome-api
+          uri: lb://WELCOME-API
+          predicates:
+          - Path=/welcome
+        - id: greet-api
+          uri: lb://GREET-API
+          predicates:
+            - Path=/greet
+
+
